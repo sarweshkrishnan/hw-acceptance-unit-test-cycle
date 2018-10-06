@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      '/movies'
       
     when /^the edit page for "([^"]+)"$/
       edit_movie_path(Movie.find_by_title($1).id)
@@ -23,7 +23,7 @@ module NavigationHelpers
       movie_path(Movie.find_by_title($1).id)
     
     when /^the Similar Movies page for "([^"]+)"$/
-      same_director_path(Movie.find_by_title($2).id)
+      same_director_path(Movie.find_by_title($1).id)
       
     when /^the (RottenPotatoes)?home\s?page$/
       '/movies'
